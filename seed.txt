@@ -1,0 +1,15 @@
+-- Inserting sample users into the users table
+INSERT INTO users (name, email) VALUES
+('User 1', 'user1@example.com'),
+('User 2', 'user2@example.com'),
+('User 3', 'user3@example.com'),
+('User 4', 'user4@example.com'),
+('User 5', 'user5@example.com');
+
+-- Inserting sample todos into the todos table for each user
+INSERT INTO todos (user_id, todo, status) VALUES
+(1, 'Complete homework', 'not_started'),
+(2, 'Buy groceries', 'active'),
+(3, 'Read a book', 'completed'),
+(4, 'Exercise for 30 minutes', 'not_started'),
+(5, 'Call the plumber', 'active');

@@ -1,0 +1,14 @@
+-- Create the Users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,         -- Unique identifier for each user
+    name VARCHAR(100) NOT NULL,    -- Name of the user
+    email VARCHAR(150) UNIQUE NOT NULL -- Email of the user (unique constraint)
+);
+
+-- Create the Todos table
+CREATE TABLE todos (
+    id SERIAL PRIMARY KEY,                  -- Unique identifier for each todo item
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE, -- Foreign key referencing users table
+    title TEXT NOT NULL,                    -- Title or content of the todo item
+    status VARCHAR(20) NOT NULL CHECK (status IN ('active', 'completed', 'not started')) -- Status with ENUM-like constraint
+);
